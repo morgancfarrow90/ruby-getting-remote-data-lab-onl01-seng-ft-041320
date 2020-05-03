@@ -12,7 +12,7 @@ attr_accessor :url
   end
  
   def get_response_body(string)
-    GetRequester.New
+     = GetRequester.new(URL)
     uri = URI.parse(@url)
     response = Net::HTTP.get_response(uri)
     response.body
