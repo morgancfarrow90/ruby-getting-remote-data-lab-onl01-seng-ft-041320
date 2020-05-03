@@ -1,30 +1,21 @@
-require 'net/http'
 require 'open-uri'
+require 'net/http'
 require 'json'
 
- 
 class GetRequester
-  
-attr_accessor :url 
-
-  def initialize(string)
-    @url = "string"
+  def initialize(url)
+    @url = url
   end
- 
-  def get_response_body(URL)
-    @url = GetRequester.new(string)
+
+  def get_response_body
     uri = URI.parse(@url)
     response = Net::HTTP.get_response(uri)
     response.body
   end
-  
+
   def parse_json
-  klass = JSON.parse(self.get_response_body)
-  klass.collect do |x|
-    x[y]  
+    JSON.parse(get_response_body)
   end
-end
- 
 end
 
 
