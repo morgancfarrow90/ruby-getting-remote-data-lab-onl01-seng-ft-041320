@@ -11,8 +11,8 @@ attr_accessor :url
     @url = "string"
   end
  
-  def get_response_body(string)
-     = GetRequester.new(URL)
+  def get_response_body
+    GetRequester.new(@url)
     uri = URI.parse(@url)
     response = Net::HTTP.get_response(uri)
     response.body
